@@ -1,0 +1,22 @@
+﻿@page "/"
+@using InvoiceGenerator.Core.Services.Auth
+@using InvoiceGenerator.Core.Models.Auth
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, @_user?.FullName!</h1>
+<div>Welcome to your new app.</div>
+<SurveyPrompt Title="How is Blazor working for you?"/>
+
+@code
+{
+    [Inject] public IAuthProvider AuthProvider { get; set; }
+
+    AuthUser? _user = null;
+
+    protected override void OnInitialized()
+    {
+        _user = AuthProvider.GetUser();
+        StateHasChanged();
+    }
+}

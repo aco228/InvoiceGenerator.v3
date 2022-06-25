@@ -1,0 +1,21 @@
+﻿using Newtonsoft.Json;
+
+namespace InvoiceGenerator.Core.Models.Google.Auth;
+
+public record GetTokenResponse
+{
+    [JsonProperty("access_token")]
+    public string AccessToken { get; set; }
+    
+    [JsonProperty("expires_in")]
+    public string ExpiresIn { get; set; }
+    
+    [JsonProperty("refresh_token")]
+    public string RefreshToken { get; set; }
+    
+    [JsonProperty("scope")]
+    public string Scope { get; set; }
+    
+    [JsonProperty("token_type")]
+    public string TokenType { get; set; }
+}

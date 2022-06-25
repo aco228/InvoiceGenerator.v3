@@ -1,0 +1,13 @@
+﻿@using InvoiceGenerator.Core.Services.Google.Auth
+<h3>GoogleAuthorizationComponent</h3>
+
+
+<a href="@GoogleRedirectionService.GetAuthRedirectionUrl()">
+    <button>
+        Authorize
+    </button>
+</a>
+
+@code {
+    [Inject] public IGoogleRedirectionService GoogleRedirectionService { get; set; }
+}
